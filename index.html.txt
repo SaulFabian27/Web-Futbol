@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Torneo de Fútbol</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <!-- Sección de login -->
+    <div id="loginSection">
+        <h2>Ingresar al Torneo</h2>
+        <input type="text" id="loginTeamName" placeholder="Ingresa tu equipo">
+        <button onclick="login()">Ingresar</button>
+        <p id="loginError" style="color: red; display: none;">El equipo no está registrado</p>
+    </div>
+
+    <!-- Sección principal -->
+    <div id="mainSection" style="display: none;">
+        <h1>Gestión de Torneo de Fútbol</h1>
+
+        <div id="adminSection">
+            <h2>Agregar Equipo</h2>
+            <input type="text" id="teamName" placeholder="Nombre del equipo">
+            <button onclick="addTeam()">Agregar</button>
+        </div>
+
+        <h2>Equipos Registrados</h2>
+        <ul id="teamList"></ul>
+
+        <h2>Modificar Equipo</h2>
+        <select id="editTeamSelector"></select>
+        <input type="text" id="newTeamName" placeholder="Nuevo nombre del equipo">
+        <button onclick="editTeam()">Modificar</button>
+        <button onclick="removeTeam()">Eliminar</button>
+
+        <h2>Registrar Partido</h2>
+        <select id="homeTeam"></select>
+        <select id="awayTeam"></select>
+        <input type="number" id="homeScore" placeholder="Goles Local" min="0">
+        <input type="number" id="awayScore" placeholder="Goles Visitante" min="0">
+        <button onclick="addMatch()">Registrar</button>
+
+        <h2>Partidos Registrados</h2>
+        <ul id="matchList"></ul>
+
+        <h2>Tabla de Posiciones</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Jugados</th>
+                    <th>Ganados</th>
+                    <th>Empates</th>
+                    <th>Perdidos</th>
+                    <th>Goles a Favor</th>
+                    <th>Goles en Contra</th>
+                    <th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody id="standingsTable"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
